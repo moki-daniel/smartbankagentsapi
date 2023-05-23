@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "smartplanner"
+  "defaultProject": "smartplanner",
+  "cli": {
+    "analytics": "22fb4b91-9178-4b5b-a864-dc70e5b29307"
+  }
 }
