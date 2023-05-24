@@ -1,27 +1,24 @@
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class HardcodedAuthenticationService {
-
-  constructor() { }
-
-  authenticate(username: string, password: string){
-   // console.log("before " + this.isUserLoggedIn)
-    if(username==="smartplanner" && password === "smartplanner") {
-      sessionStorage.setItem('authenticateUser', username)
-      //console.log('after ' + this.isUserLoggedIn());
+  constructor() {}
+  authenticate(username: any, password: any) {
+    if (username === 'smartplanner' && password === 'smartplanner') {
+      sessionStorage.setItem('authenticateUser', username);
       return true;
     }
-    return false
+    return false;
   }
 
-isUserLoggedIn() {
-  let user = sessionStorage.getItem('authenticateUser')
-  return !(user === null)
-}
-logout(){
-  sessionStorage.removeItem('authenticatedUser')
-}
+  isUserLoggedIn() {
+    let user = sessionStorage.getItem('authenticateUser');
+    return !(user === null);
+  }
+  logout() {
+    sessionStorage.removeItem('authenticateUser');
+
+  }
 }
