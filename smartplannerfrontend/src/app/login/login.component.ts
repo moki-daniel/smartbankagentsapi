@@ -20,8 +20,6 @@ invalidLogin = false
   }
 
   handleLogin() {
-    // console.log(this.username);
-    // console.log(this.password)
     if(this.hardcodedAuthenticationService.authenticate(this.username, this.password)) {
       //redirect to landingpage
       this.router.navigate(['landingpage', this.username])

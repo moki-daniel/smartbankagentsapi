@@ -3,12 +3,13 @@
         <div><a href="https://www.smartplanner.com" class="navbar-brand">smartplanner</a></div>
 
         <ul class="navbar-nav">
-            <li><a routerLink="/landingpage/smartplanner" class="nav-link">Home</a></li>
-            <li><a routerLink="/todos" class="nav-link">Todos</a></li>
+            <!-- show this route only if the user has loggedIn -->
+            <li><a *ngIf="isUserLoggedIn" routerLink="/landingpage/smartplanner" class="nav-link">Home</a></li>
+            <li><a *ngIf="isUserLoggedIn" routerLink="/todos" class="nav-link">Todos</a></li>
         </ul>
         <ul class="navbar-nav navbar-collapse justify-content-end">
-            <li><a routerLink="/login" class="nav-link">Login</a></li>
-            <li><a routerLink="/logout" class="nav-link">LogOut</a></li>
+            <li><a *ngIf="!isUserLoggedIn" routerLink="/login" class="nav-link">Login</a></li>
+            <li><a *ngIf="!isUserLoggedIn" routerLink="/logout" class="nav-link">LogOut</a></li>
         </ul>
     </nav>
 </header>
